@@ -8,8 +8,19 @@ public class FinanceApplication {
         BankAccount account1 = new BankAccount("123", "Pam", 12500);
         IValuable account2 = new BankAccount("456", "Gary", 1500);
 
-        //try to deposit money into both accounts
-        account1.deposit(100);
-        //account2.deposit(100); fails because IValuable doesn't have deposit
+        try {
+            BankAccount depAccount = null;
+            //try to deposit money into both accounts
+            if (account1 instanceof BankAccount) {
+                depAccount = (BankAccount) account1;
+            }
+            depAccount.deposit(100);
+            if (account2 instanceof BankAccount) {
+                depAccount = (BankAccount) account2;
+            }
+            depAccount.deposit(100); //fails because IValuable doesn't have deposit
+        }catch(Exception e){
+            System.out.println("Account not found");
+        }
     }
 }
