@@ -2,7 +2,7 @@ package com.pluralsight.finance;
 
 import com.pluralsight.interfaces.IValuable;
 
-public abstract class FixedAsset implements IValuable {
+public abstract class FixedAsset implements IValuable, Comparable<IValuable>{
     private String name;
     private double marketValue;
 

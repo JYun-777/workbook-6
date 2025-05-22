@@ -2,7 +2,7 @@ package com.pluralsight.finance;
 
 import com.pluralsight.interfaces.IValuable;
 
-public class CreditCard implements IValuable {
+public class CreditCard implements IValuable, Comparable<IValuable> {
     private double limit;
     private double balance;
 

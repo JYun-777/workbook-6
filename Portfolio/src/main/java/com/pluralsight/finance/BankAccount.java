@@ -2,7 +2,7 @@ package com.pluralsight.finance;
 
 import com.pluralsight.interfaces.IValuable;
 
-public class BankAccount implements IValuable {
+public class BankAccount implements IValuable, Comparable<IValuable> {
     String accountNumber;
     String name;
     double balance;
